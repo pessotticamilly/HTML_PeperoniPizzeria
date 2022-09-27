@@ -67,7 +67,7 @@ header {
 
 #loc {
     padding: 0.8rem 0.8rem 0.2rem 0.8rem;
-    border-bottom: 2px #ffffff solid;
+    border-bottom: 2px #000 solid;
 }
 
 #loc:hover {
