@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url("/Imagens/Fundo.jpg");
+    background-image: url("/app/src/Fundo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -116,4 +116,27 @@ main {
     font-size: 2rem;
     color: #ffffff;
     font-weight: 700;
+}
+
+footer {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #18212a;
+}
+
+#linhaUm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: auto;
+}
+
+#linhaUm .fi {
+    width: 100px;
+    color: #ffffff;
 }
