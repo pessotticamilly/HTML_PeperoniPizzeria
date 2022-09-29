@@ -6,9 +6,7 @@
     box-sizing: border-box;
 }
 
-body {
-
-}
+body {}
 
 p {
     font-weight: 500;
@@ -67,7 +65,7 @@ header {
 #loc {
     margin: 0;
     padding: 0.8rem 0.8rem 0.2rem 0.8rem;
-    border-bottom: 2px #ffffff solid;
+    border-bottom: 3px #ffffff solid;
 }
 
 #loc:hover {
@@ -97,4 +95,106 @@ header {
 
 #final {
     margin: 0;
+}
+
+main {
+    width: 100%;
+    min-height: 92vh;
+}
+
+.infoPedido {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 25%;
+}
+
+.titulo {
+    padding: 0 0 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.titulo p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.radios {
+    padding: 0 0 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.radio input {
+    padding: 0 0 0 1rem;
+}
+
+.radio p {
+    padding: 0 0 0 0.5rem;
+}
+
+
+footer {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #ddd;
+}
+
+#linhaUm {
+    padding: 0 0 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: auto;
+}
+
+#linhaUm i {
+    font-size: 120%;
+    color: #fff;
+}
+
+#linhaUm i:hover {
+    cursor: pointer;
+    color: #999;
+}
+
+.linhaDois {
+    padding: 0 0 1rem 0;
+}
+
+.linhaDois p {
+    color: #fff;
+}
+
+.linhaDois span:hover {
+    color: #999;
+}
+
+#linhaTres {
+    padding: 1rem 0 0 0;
+}
+
+#linhaTres p {
+    color: #999;
 }

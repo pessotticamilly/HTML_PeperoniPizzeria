@@ -7,9 +7,10 @@
 }
 
 body {
-    background-image: url("/app/src/Fundo.jpg");
+    background-image: url("/app/images/Fundo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #18252f;
 }
 
 p {
@@ -54,7 +55,7 @@ header {
 
 .navEsquerdo a {
     margin: 0 6rem 0 0;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     padding: 0.8rem;
 }
@@ -67,7 +68,7 @@ header {
 
 #loc {
     padding: 0.8rem 0.8rem 0.2rem 0.8rem;
-    border-bottom: 2px #ffffff solid;
+    border-bottom: 3px #fff solid;
 }
 
 #loc:hover {
@@ -84,7 +85,7 @@ header {
 
 .navDireito a {
     margin: 0 6rem 0 0;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     padding: 0.8rem;
 }
@@ -114,21 +115,23 @@ main {
 
 #texto p {
     font-size: 2rem;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
 }
 
 footer {
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
-    background-color: #18212a;
+    background-color: #18252f;
 }
 
 #linhaUm {
+    padding: 0 0 2rem 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -136,7 +139,32 @@ footer {
     height: auto;
 }
 
-#linhaUm .fi {
-    width: 100px;
-    color: #ffffff;
+#linhaUm i {
+    font-size: 120%;
+    color: #fff;
+}
+
+#linhaUm i:hover {
+    cursor: pointer;
+    color: #4a5f6e;
+}
+
+.linhaDois {
+    padding: 0 0 1rem 0;
+}
+
+.linhaDois p {
+    color: #fff;
+}
+
+.linhaDois span:hover {
+    color: #4a5f6e;
+}
+
+#linhaTres {
+    padding: 1rem 0 0 0;
+}
+
+#linhaTres p {
+    color: #4a5f6e;
 }

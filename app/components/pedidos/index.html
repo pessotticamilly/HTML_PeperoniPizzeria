@@ -6,29 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peperoni Pizzeria</title>
-    <link rel="stylesheet" href="./CSS/pedidoParte1.css">
-    <script src="./JS/pedidoParte1.js" defer></script>
-    <link rel="shortcut icon" href="./Imagens/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <link rel="shortcut icon" href="../../images/Icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
 </head>
 
 <body>
     <header>
         <div class="containerEsquerdo">
             <div class="navEsquerdo">
-                <a href="./index.html">Início</a>
+                <a href="../home/index.html">Início</a>
             </div>
 
             <div class="navEsquerdo">
-                <a id="loc" href="./pedidoParte1.html">Fazer pedido</a>
+                <a id="loc" href="./index.html">Fazer pedido</a>
             </div>
         </div>
 
         <div id="containerLogo">
             <div id="logo">
-                <img src="./Imagens/Logo.png" alt="Logo">
+                <img src="../../images/LogoComFundo.jpg" alt="Logo">
             </div>
         </div>
 
@@ -43,9 +44,69 @@
         </div>
     </header>
 
-    <main></main>
+    <main>
+        <div class="infoPedido">
+            <div class="titulo">
+                <p>Tamanho</p>
+            </div>
 
-    <footer></footer>
+            <div class="radios">
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>Broto</p>
+                </div>
+    
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>Pequena</p>
+                </div>
+    
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>Média</p>
+                </div>
+            </div>
+
+            <div class="radios">
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>Grande</p>
+                </div>
+    
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>GG</p>
+                </div>
+    
+                <div class="radio">
+                        <input type="radio" name="tamanho">
+                        <p>Gigante</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="linhaUm">
+            <i class="fi fi-brands-whatsapp"></i>
+            <i class="fi fi-brands-instagram"></i>
+            <i class="fi fi-brands-facebook "></i>
+            <i class="fi fi-brands-facebook-messenger"></i>
+            <i class="fi fi-brands-google"></i>
+        </div>
+
+        <div class="linhaDois">
+            <p><span>Informações</span> • <span>Suporte</span> • <span>Marketing</span></p>
+        </div>
+
+        <div class="linhaDois">
+            <p><span>Termos de Uso</span> • <span>Política de Privacidade</span></p>
+        </div>
+
+        <div id="linhaTres">
+            <p>@ 2022 Camilly Pessotti & Taiany Padilha</p>
+        </div>
+    </footer>
 </body>
 
 </html>
