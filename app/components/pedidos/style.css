@@ -157,7 +157,7 @@ footer {
     align-items: center;
     width: 100%;
     height: auto;
-    background-color: #ddd;
+    background-color: #aaa;
 }
 
 #linhaUm {
@@ -176,7 +176,7 @@ footer {
 
 #linhaUm i:hover {
     cursor: pointer;
-    color: #999;
+    color: #555;
 }
 
 .linhaDois {
@@ -188,7 +188,7 @@ footer {
 }
 
 .linhaDois span:hover {
-    color: #999;
+    color: #555;
 }
 
 #linhaTres {
@@ -196,5 +196,5 @@ footer {
 }
 
 #linhaTres p {
-    color: #999;
+    color: #555;
 }
