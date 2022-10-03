@@ -100,6 +100,7 @@ header {
     margin: 0;
 }
 
+
 main {
     display: flex;
     justify-content: flex-start;
@@ -118,6 +119,7 @@ main {
     color: #fff;
     font-weight: 700;
 }
+
 
 footer {
     padding: 2rem;

@@ -6,12 +6,6 @@
     box-sizing: border-box;
 }
 
-body {}
-
-p {
-    font-weight: 500;
-}
-
 header {
     padding: 0 2rem;
     display: flex;
@@ -97,55 +91,10 @@ header {
     margin: 0;
 }
 
+
 main {
     width: 100%;
     min-height: 92vh;
-}
-
-.infoPedido {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 25%;
-}
-
-.titulo {
-    padding: 0 0 1rem 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-.titulo p {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.radios {
-    padding: 0 0 1rem 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-}
-
-.radio {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-}
-
-.radio input {
-    padding: 0 0 0 1rem;
-}
-
-.radio p {
-    padding: 0 0 0 0.5rem;
 }
 
 
