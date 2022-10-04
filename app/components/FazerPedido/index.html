@@ -45,7 +45,7 @@
     </header>
 
     <main>
-        <form>
+        <form id="form">
             <div class="container">
                 <div class="bloco">
                     <div class="titulo">
@@ -57,7 +57,7 @@
                             <p>Nome</p>
 
                             <div class="input">
-                                <input type="text">
+                                <input type="text" id="nome">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             <p>Email</p>
 
                             <div class="input">
-                                <input type="email">
+                                <input type="email" id="email">
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             <p>Telefone</p>
 
                             <div class="input">
-                                <input type="number">
+                                <input type="number" id="telefone">
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             <p>Bairro</p>
 
                             <div class="input">
-                                <input type="text">
+                                <input type="text" id="bairro">
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             <p>Rua</p>
 
                             <div id="rua">
-                                <input type="text">
+                                <input type="text" id="rua">
                             </div>
                         </div>
 
@@ -111,7 +111,7 @@
                             <p>Número</p>
 
                             <div id="numero">
-                                <input type="number">
+                                <input type="number" id="numero">
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                     <option value="Sem bebida" selected>Sem bebida</option>
                                     <option value="Coca-Cola 2L">Coca-Cola 2L</option>
                                     <option value="Coca-Cola 350mL">Coca-Cola 350mL</option>
-                                    <option value="Graraná 2L">Graraná 2L</option>
+                                    <option value="Guaraná 2L">Guaraná 2L</option>
                                     <option value="Guaraná 350mL">Guaraná 350mL</option>
                                     <option value="Del Valle Uva 290mL">Del Valle Uva 290mL</option>
                                     <option value="Del Valle Laranja 290mL">Del Valle Laranja 290mL</option>
@@ -182,7 +182,7 @@
                 <div class="inputs">
                     <div class="texto">
                         <p>Tipo de entrega</p>
-                        
+
                         <div class="input">
                             <select name="tipoEntrega" id="tipoEntrega">
                                 <option value="Selecionar tipo de entrega" selected>Selecionar tipo de entrega</option>
@@ -192,7 +192,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="inputs">
+                    <div class="texto">
+                        <p>Observações</p>
+
+                        <div class="input">
+                            <textarea id="observacoes" cols="40" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <button type="submit">Confirmar</button>
         </form>
     </main>
 
