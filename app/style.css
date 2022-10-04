@@ -10,6 +10,7 @@ body {
     background-image: url("/app/images/Fundo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     background-color: #18252f;
 }
 
@@ -63,7 +64,7 @@ header {
 .navEsquerdo a:hover {
     cursor: pointer;
     background-color: #ffffff50;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 #loc {
@@ -93,7 +94,7 @@ header {
 .navDireito a:hover {
     cursor: pointer;
     background-color: #ffffff50;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 #final {

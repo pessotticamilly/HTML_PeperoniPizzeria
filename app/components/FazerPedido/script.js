@@ -1,8 +1,14 @@
-const form = document.getElementById("form");
-form.addEventListener('submit', confirmarPedido);
 
 const confirmar = document.getElementById("confimar");
-confirmar.addEventListener('click', window.location.href="http://127.0.0.1:5500/app/components/VerPedido/index.html")
+confirmar.addEventListener('click', window.location.href="");
+
+let valorTotalJS = 10;
+
+const valorTotal = document.getElementById("valorTotal");
+valorTotal.innerText = valorTotalJS
+
+const form = document.getElementById("form");
+form.addEventListener('submit', confirmarPedido);
 
 function confirmarPedido(e) {
     e.preventDefault()
@@ -13,7 +19,7 @@ function confirmarPedido(e) {
     const bairro = document.getElementById("bairro").value;
     const rua = document.getElementById("rua").value;
     const numero = document.getElementById("numero").value;
-
+    
     const pessoa = {
         nome: nome,
         email: email,
