@@ -1,6 +1,9 @@
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
 
+const confirmar = document.getElementById("confimar");
+confirmar.addEventListener('click', window.location.href="http://127.0.0.1:5500/app/components/VerPedido/index.html")
+
 function confirmarPedido(e) {
     e.preventDefault()
 
@@ -20,8 +23,6 @@ function confirmarPedido(e) {
         numero: numero
     };
 
-    console.log(pessoa);
-
     const tamanho = document.getElementById("tamanho").value;
     const borda = document.getElementById("borda").value;
     const bebida = document.getElementById("bebida").value;
@@ -36,5 +37,6 @@ function confirmarPedido(e) {
         observacoes: observacoes
     }
 
-    console.log(pizza);
+    localStorage.setItem("Pessoa", JSON.stringify(pessoa));
+    localStorage.setItem("Pizza", JSON.stringify(pizza));
 }
