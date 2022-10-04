@@ -122,7 +122,6 @@ form {
     align-items: center;
     width: 60%;
     height: auto;
-    background-color: aqua;
 }
 
 #bloco2 {
@@ -130,6 +129,7 @@ form {
 }
 
 .titulo {
+    padding: 0 0 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,14 +143,26 @@ form {
 }
 
 .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 400px;
 }
 
 .input input {
+    margin: 0 0 1rem 0;
+    padding: 0.2rem;
     width: 400px;
 }
 
-#inputs {
+.input select {
+    margin: 0 0 1rem 0;
+    padding: 0.2rem;
+    width: 200px;
+}
+
+#juntosEndereco {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,11 +170,21 @@ form {
 }
 
 #rua input {
+    padding: 0.2rem;
     width: 290px;
 }
 
 #numero input {
+    padding: 0.2rem;
     width: 100px;
+}
+
+#juntosPizza {
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 420px;
 }
 
 

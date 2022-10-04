@@ -51,34 +51,34 @@
                     <div class="titulo">
                         <p>Dados Pessoais</p>
                     </div>
-    
+
                     <div class="inputs">
                         <div class="texto">
                             <p>Nome</p>
-                        </div>
-    
-                        <div class="input">
-                            <input type="text">
+
+                            <div class="input">
+                                <input type="text">
+                            </div>
                         </div>
                     </div>
-    
+
                     <div class="inputs">
                         <div class="texto">
                             <p>Email</p>
-                        </div>
-    
-                        <div class="input">
-                            <input type="email">
+
+                            <div class="input">
+                                <input type="email">
+                            </div>
                         </div>
                     </div>
-    
+
                     <div class="inputs">
                         <div class="texto">
                             <p>Telefone</p>
-                        </div>
-    
-                        <div class="input">
-                            <input type="number">
+
+                            <div class="input">
+                                <input type="number">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,43 +87,111 @@
                     <div class="titulo">
                         <p>Endereço</p>
                     </div>
-    
+
                     <div class="inputs">
                         <div class="texto">
                             <p>Bairro</p>
-                        </div>
-    
-                        <div class="input">
-                            <input type="text">
+
+                            <div class="input">
+                                <input type="text">
+                            </div>
                         </div>
                     </div>
-    
-                    <div id="inputs">
-                        <div class="juntos">
-                            <div class="texto">
-                                <p>Rua</p>
-                            </div>
-    
+
+                    <div id="juntosEndereco">
+                        <div class="texto">
+                            <p>Rua</p>
+
                             <div id="rua">
                                 <input type="text">
                             </div>
                         </div>
-    
-                        <div class="juntos">
-                            <div class="texto">
-                                <p>Número</p>
-                            </div>
-    
+
+                        <div class="texto">
+                            <p>Número</p>
+
                             <div id="numero">
                                 <input type="number">
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
             <div class="container">
-a
+                <div class="titulo">
+                    <p>Pizza</p>
+                </div>
+
+                <div class="inputs">
+                    <div class="texto">
+                        <p>Tamanho</p>
+
+                        <div class="input">
+                            <select name="tamanho" id="tamanho">
+                                <option value="Selecionar tamanho" selected>Selecionar tamanho</option>
+                                <option value="Broto">Broto</option>
+                                <option value="Pequena">Pequena</option>
+                                <option value="Média">Média</option>
+                                <option value="Grande">Grande</option>
+                                <option value="GG">GG</option>
+                                <option value="Gigante">Gigante</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="juntosPizza">
+                    <div class="inputs">
+                        <div class="texto">
+                            <p>Borda</p>
+
+                            <div class="input">
+                                <select name="borda" id="borda">
+                                    <option value="Sem borda" selected>Sem borda</option>
+                                    <option value="Cheddar">Cheddar</option>
+                                    <option value="Catupiry">Catupiry</option>
+                                    <option value="Chocolate preto">Chocolate preto</option>
+                                    <option value="Chocolate branco">Chocolate branco</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="texto">
+                            <p>Bebida</p>
+
+                            <div class="input">
+                                <select name="bebida" id="bebida">
+                                    <option value="Sem bebida" selected>Sem bebida</option>
+                                    <option value="Coca-Cola 2L">Coca-Cola 2L</option>
+                                    <option value="Coca-Cola 350mL">Coca-Cola 350mL</option>
+                                    <option value="Graraná 2L">Graraná 2L</option>
+                                    <option value="Guaraná 350mL">Guaraná 350mL</option>
+                                    <option value="Del Valle Uva 290mL">Del Valle Uva 290mL</option>
+                                    <option value="Del Valle Laranja 290mL">Del Valle Laranja 290mL</option>
+                                    <option value="Água sem gás 500mL">Água sem gás 500mL</option>
+                                    <option value="Água com gás 500mL">Água com gás 500mL</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputs">
+                    <div class="texto">
+                        <p>Tipo de entrega</p>
+                        
+                        <div class="input">
+                            <select name="tipoEntrega" id="tipoEntrega">
+                                <option value="Selecionar tipo de entrega" selected>Selecionar tipo de entrega</option>
+                                <option value="Retirada no balcão">Retirada no balcão</option>
+                                <option value="Entrega em casa">Entrega em casa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </main>
