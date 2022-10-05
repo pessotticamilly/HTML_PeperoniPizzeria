@@ -11,6 +11,11 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
+tamanho.addEventListener('change', mudarValorTamanho, criarInputsSabores);
+borda.addEventListener('change', mudarValorBorda);
+bebida.addEventListener('change', mudarValorBebida);
+tipoEntrega.addEventListener('change', mudarValorTipoEntrega);
+
 const valorTotal = document.getElementById("valorTotal");
 
 let valorTotalJS = 0.00;
@@ -50,10 +55,23 @@ function mudarValorTamanho() {
         mudarValorTotal();
     };
 
+
     if (tamanho.value == "Gigante") {
         valorTamanho = 50.00;
         mudarValorTotal();
     };
+};
+
+const quantidadeSabores = 0;
+
+function criarInputsSabores() {
+    switch (tamanho.value) {
+        case "Broto":
+            quantidadeSabores = 1;
+            break;
+
+            case "Pe"
+    }
 };
 
 function mudarValorBorda() {
@@ -118,9 +136,12 @@ function mudarValorTotal() {
     valorTotalJS = 0.00;
 };
 
-function criarInputsSabores() {
+const cancelar = document.getElementById("cancelar");
+cancelar.addEventListener('click', limparInnerText);
 
-};
+function limparInnerText() {
+    valorTotal.innerText = "Valor total: R$ 0";
+}
 
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
@@ -129,7 +150,7 @@ function confirmarPedido(e) {
     e.preventDefault();
 
     if (tamanho.value != "Selecionar tamanho") {
-        if(tipoEntrega.value != "Selecionar tipo de entrega") {
+        if (tipoEntrega.value != "Selecionar tipo de entrega") {
             const pedido = {
                 nome: nome.value,
                 email: email.value,
@@ -144,9 +165,9 @@ function confirmarPedido(e) {
                 observacoes: observacoes.value,
                 valorTotal: valorTotalJS
             };
-    
+
             console.log(pedido);
-    
+
             localStorage.setItem("Pedido", JSON.stringify(pedido));
         } else {
             alert("Escolha o tipo de entrega!");

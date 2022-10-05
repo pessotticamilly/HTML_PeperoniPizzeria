@@ -92,6 +92,8 @@ header {
 }
 
 
+
+
 main {
     width: 100%;
     min-height: 92vh;
@@ -257,7 +259,6 @@ form {
     background-color: #999;
 }
 
-
 #confirmar {
     margin: 0 0 0 1rem;
     background-color: #C9031A;
@@ -267,6 +268,9 @@ form {
     cursor: pointer;
     background-color: #9D1722;
 }
+
+
+
 
 footer {
     padding: 2rem;

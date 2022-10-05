@@ -18,6 +18,9 @@ p {
     font-weight: 500;
 }
 
+
+
+
 header {
     padding: 0 2rem;
     display: flex;
@@ -102,6 +105,8 @@ header {
 }
 
 
+
+
 main {
     display: flex;
     justify-content: flex-start;
@@ -120,6 +125,8 @@ main {
     color: #fff;
     font-weight: 700;
 }
+
+
 
 
 footer {
