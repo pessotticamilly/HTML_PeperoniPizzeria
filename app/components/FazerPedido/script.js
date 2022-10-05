@@ -1,5 +1,3 @@
-const valorTotal = document.getElementById("valorTotal");
-
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 const telefone = document.getElementById("telefone");
@@ -13,84 +11,147 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
-let valorTotalJS = 0;
-let valorTamanho = 0;
-let valorBorda = 0;
-let valorBebida = 0;
-let valorTipoEntrega = 0;
+const valorTotal = document.getElementById("valorTotal");
+
+let valorTotalJS = 0.00;
+let valorTamanho = 0.00;
+let valorBorda = 0.00;
+let valorBebida = 0.00;
+let valorTipoEntrega = 0.00;
 
 function mudarValorTamanho() {
+    if (tamanho.value == "Selecionar tamanho") {
+        valorTamanho = 0.00;
+        mudarValorTotal();
+    };
 
-}
+    if (tamanho.value == "Broto") {
+        valorTamanho = 15.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Pequena") {
+        valorTamanho = 30.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Média") {
+        valorTamanho = 35.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Grande") {
+        valorTamanho = 40.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "GG") {
+        valorTamanho = 45.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Gigante") {
+        valorTamanho = 50.00;
+        mudarValorTotal();
+    };
+};
 
 function mudarValorBorda() {
+    if (borda.value == "Sem borda") {
+        valorBorda = 0.00;
+        mudarValorTotal();
+    };
 
-}
+    if (borda.value == "Cheddar" || borda.value == "Catupiry") {
+        valorBorda = 4.00;
+        mudarValorTotal();
+    };
+
+    if (borda.value == "Chocolate preto" || borda.value == "Chocolate branco") {
+        valorBorda = 3.00;
+        mudarValorTotal();
+    };
+};
 
 function mudarValorBebida() {
-    if(bebida.value == "Sem bebida"){
-        valorBebida = 0;
+    if (bebida.value == "Sem bebida") {
+        valorBebida = 0.00;
         mudarValorTotal();
-    } 
-    
-    if(bebida.value == "Coca-Cola 2L" || bebida.value == "Guaraná 2L"){
-        valorBebida = 8;
-        mudarValorTotal();
-    } 
-    
-    if(bebida.value == "Água sem gás 500mL" || bebida.value == "Água com gás 500mL") {
-        valorBebida = 6;
-        mudarValorTotal();
-    }
+    };
 
-    if(bebida.value == "Coca-Cola 350mL" || bebida.value == "Guaraná 350mL") {
-        valorBebida = 4;
+    if (bebida.value == "Coca-Cola 2L" || bebida.value == "Guaraná 2L") {
+        valorBebida = 8.00;
         mudarValorTotal();
-    }
+    };
 
-    if(bebida.value == "Del Valle Uva 290mL" || bebida.value == "Del Valle Laranja 290mL") {
-        valorBebida = 3;
+    if (bebida.value == "Água sem gás 500mL" || bebida.value == "Água com gás 500mL") {
+        valorBebida = 6.00;
         mudarValorTotal();
-    }
-}
+    };
+
+    if (bebida.value == "Coca-Cola 350mL" || bebida.value == "Guaraná 350mL") {
+        valorBebida = 4.00;
+        mudarValorTotal();
+    };
+
+    if (bebida.value == "Del Valle Uva 290mL" || bebida.value == "Del Valle Laranja 290mL") {
+        valorBebida = 3.50;
+        mudarValorTotal();
+    };
+};
 
 function mudarValorTipoEntrega() {
+    if (tipoEntrega.value == "Selecionar tipo de entrega" || tipoEntrega.value == "Retirada no balcão") {
+        valorTipoEntrega = 0.00;
+        mudarValorTotal();
+    };
 
-}
+    if (tipoEntrega.value == "Entrega em casa") {
+        valorTipoEntrega = 8.00;
+        mudarValorTotal();
+    };
+};
 
 function mudarValorTotal() {
-    valorTotalJS += valorTamanho + valorBorda +valorBebida + valorTipoEntrega;
+    valorTotalJS += valorTamanho + valorBorda + valorBebida + valorTipoEntrega;
     valorTotal.innerText = "Valor total: R$ " + valorTotalJS;
-    valorTotalJS = 0
-}
+    valorTotalJS = 0.00;
+};
+
+function criarInputsSabores() {
+
+};
 
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
 
 function confirmarPedido(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (nome.value == null || email.value == null || telefone.value == null || bairro.value == null || rua.value == null || numero.value == null) {
-        alert("Há campos vazios! Preencha todos os campos para fazer um pedido!");
-    } else {
-        const pessoa = {
-            nome: nome.value,
-            email: email.value,
-            telefone: telefone.value,
-            bairro: bairro.value,
-            rua: rua.value,
-            numero: numero.value
+    if (tamanho.value != "Selecionar tamanho") {
+        if(tipoEntrega.value != "Selecionar tipo de entrega") {
+            const pedido = {
+                nome: nome.value,
+                email: email.value,
+                telefone: telefone.value,
+                bairro: bairro.value,
+                rua: rua.value,
+                numero: numero.value,
+                tamanho: tamanho.value,
+                borda: borda.value,
+                bebida: bebida.value,
+                tipoEntrega: tipoEntrega.value,
+                observacoes: observacoes.value,
+                valorTotal: valorTotalJS
+            };
+    
+            console.log(pedido);
+    
+            localStorage.setItem("Pedido", JSON.stringify(pedido));
+        } else {
+            alert("Escolha o tipo de entrega!");
         };
-
-        const pizza = {
-            tamanho: tamanho.value,
-            borda: borda.value,
-            bebida: bebida.value,
-            tipoEntrega: tipoEntrega.value,
-            observacoes: observacoes.value
-        }
-
-        localStorage.setItem("Pedido", JSON.stringify(pedido));
-        localStorage.setItem("Pizza", JSON.stringify(pizza));
-    }
-}
+    } else {
+        alert("Escolha o tamanho da pizza!");
+    };
+};

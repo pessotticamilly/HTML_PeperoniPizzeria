@@ -201,7 +201,7 @@ form {
     width: 400px;
 }
 
-#rua input {
+#ruaDiv input {
     margin: 0 0 1rem 0;
     padding: 0.5rem;
     width: 290px;
@@ -212,7 +212,7 @@ form {
     background-color: #eee;
 }
 
-#numero input {
+#numeroDiv input {
     margin: 0 0 1rem 0;
     padding: 0.5rem;
     width: 100px;
