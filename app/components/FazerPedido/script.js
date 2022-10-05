@@ -95,9 +95,7 @@ function criarInputsSabores() {
             break;
     };
 
-    for(let i = 0; i < quantidadeSabores; i++) {
-        
-    }
+    
 };
 
 function mudarValorBorda() {

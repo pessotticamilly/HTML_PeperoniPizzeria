@@ -98,6 +98,7 @@ main {
     width: 100%;
     min-height: 92vh;
     height: 92vh;
+    max-height: 92vh;
 }
 
 form {
@@ -279,7 +280,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-color: #aaa;
 }
 
