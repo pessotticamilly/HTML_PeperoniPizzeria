@@ -13,6 +13,7 @@ const borda = document.getElementById("borda");
 const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
+const valorTotal = document.getElementById("valorTotal");
 
 nome.innerText = `${pedido.nome}`;
 email.innerText = `${pedido.email}`;
@@ -27,3 +28,4 @@ borda.innerText = `${pedido.borda}`;
 bebida.innerText = `${pedido.bebida}`;
 tipoEntrega.innerText = `${pedido.tipoEntrega}`;
 observacoes.innerText = `${pedido.observacoes}`;
+valorTotal.innerText = `R$ ${pedido.valorTotal}`;

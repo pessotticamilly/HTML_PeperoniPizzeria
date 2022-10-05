@@ -193,9 +193,12 @@ function mudarValorTipoEntrega() {
     };
 };
 
+let valorTotalLocalStorage = 0;
+
 function mudarValorTotal() {
     valorTotalJS += valorTamanho + valorBorda + valorBebida + valorTipoEntrega;
     valorTotal.innerText = "Valor total: R$ " + valorTotalJS;
+    valorTotalLocalStorage = valorTotalJS;
     valorTotalJS = 0.00;
 };
 
@@ -231,7 +234,7 @@ function confirmarPedido(e) {
                 tipoEntrega: tipoEntrega.value,
                 observacoes: observacoes.value,
                 sabores: buscarSabores(),
-                valorTotal: valorTotalJS
+                valorTotal: valorTotalLocalStorage
             };
 
             console.log(pedido);

@@ -139,6 +139,7 @@ main {
 }
 
 .texto p {
+    padding: 0 0 0 0.5rem;
     font-weight: 500;
 }
 
