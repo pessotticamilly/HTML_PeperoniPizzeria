@@ -164,7 +164,7 @@
                                 <p>Bebida</p>
     
                                 <div class="input">
-                                    <select name="bebida" id="bebida">
+                                    <select name="bebida" id="bebida" onchange="mudarValor()">
                                         <option value="Sem bebida" selected>Sem bebida</option>
                                         <option value="Coca-Cola 2L">Coca-Cola 2L</option>
                                         <option value="Coca-Cola 350mL">Coca-Cola 350mL</option>
@@ -207,7 +207,7 @@
             </div>
 
             <div id="linhaFixa">
-                <p id="valorTotal">Valor total: </p>
+                <p id="valorTotal">Valor total: R$</p>
                 <div id="botoes">
                     <button type="reset" id="cancelar">Cancelar</button>
                     <button type="submit" id="confirmar">Confirmar</button>

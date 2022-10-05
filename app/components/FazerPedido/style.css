@@ -170,6 +170,7 @@ form {
     border: none;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 0 #00000050;
+    outline: none;
     background-color: #eee;
 }
 
@@ -180,13 +181,16 @@ form {
     border: none;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 1px #00000050;
+    outline: none;
     background-color: #eee;
 }
 
 .input textarea {
+    padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 1px #00000050;
+    outline: none;
     background-color: #eee;
 }
 
@@ -204,6 +208,7 @@ form {
     border: none;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 1px #00000050;
+    outline: none;
     background-color: #eee;
 }
 
@@ -214,6 +219,7 @@ form {
     border: none;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 1px #00000050;
+    outline: none;
     background-color: #eee;
 }
 
@@ -222,7 +228,7 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 420px;
+    width: 440px;
 }
 
 #linhaFixa {

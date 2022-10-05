@@ -1,11 +1,55 @@
-
-const confirmar = document.getElementById("confimar");
-confirmar.addEventListener('click', window.location.href="");
-
-let valorTotalJS = 10;
-
 const valorTotal = document.getElementById("valorTotal");
-valorTotal.innerText = valorTotalJS
+let valorTotalJS = 0;
+
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const telefone = document.getElementById("telefone");
+const bairro = document.getElementById("bairro");;
+const rua = document.getElementById("rua");
+const numero = document.getElementById("numero");
+
+const tamanho = document.getElementById("tamanho");
+const borda = document.getElementById("borda");
+const bebida = document.getElementById("bebida");
+const tipoEntrega = document.getElementById("tipoEntrega");
+const observacoes = document.getElementById("observacoes");
+
+let valorBebida = 0;
+
+function mudarValor() {
+    if(bebida.value == "Sem bebida"){
+        valorBebida = 0;
+        mudarValorTotal();
+    } 
+    
+    if(bebida.value == "Coca-Cola 2L" || bebida.value == "Guaraná 2L"){
+        valorBebida = 8;
+        mudarValorTotal();
+    } 
+    
+    if(bebida.value == "Água sem gás 500mL" || bebida.value == "Água com gás 500mL") {
+        valorBebida = 6;
+        mudarValorTotal();
+    }
+
+    if(bebida.value == "Coca-Cola 350mL" || bebida.value == "Guaraná 350mL") {
+        valorBebida = 4;
+        mudarValorTotal();
+    }
+
+    if(bebida.value == "Del Valle Uva 290mL" || bebida.value == "Del Valle Laranja 290mL") {
+        valorBebida = 3;
+        mudarValorTotal();
+    }
+}
+
+function mudarValorTotal() {
+    valorTotalJS += valorBebida;
+    valorTotal.innerText = "Valor total: R$ " + valorTotalJS;
+    valorTotalJS = 0
+}
+
+valorTotal.innerText += " " + valorTotalJS;
 
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
@@ -13,36 +57,27 @@ form.addEventListener('submit', confirmarPedido);
 function confirmarPedido(e) {
     e.preventDefault()
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const telefone = document.getElementById("telefone").value;
-    const bairro = document.getElementById("bairro").value;
-    const rua = document.getElementById("rua").value;
-    const numero = document.getElementById("numero").value;
-    
-    const pessoa = {
-        nome: nome,
-        email: email,
-        telefone: telefone,
-        bairro: bairro,
-        rua: rua,
-        numero: numero
-    };
+    if (nome.value == null || email.value == null || telefone.value == null || bairro.value == null || rua.value == null || numero.value == null) {
+        alert("Há campos vazios! Preencha todos os campos para fazer um pedido!");
+    } else {
+        const pessoa = {
+            nome: nome.value,
+            email: email.value,
+            telefone: telefone.value,
+            bairro: bairro.value,
+            rua: rua.value,
+            numero: numero.value
+        };
 
-    const tamanho = document.getElementById("tamanho").value;
-    const borda = document.getElementById("borda").value;
-    const bebida = document.getElementById("bebida").value;
-    const tipoEntrega = document.getElementById("tipoEntrega").value;
-    const observacoes = document.getElementById("observacoes").value;
+        const pizza = {
+            tamanho: tamanho.value,
+            borda: borda.value,
+            bebida: bebida.value,
+            tipoEntrega: tipoEntrega.value,
+            observacoes: observacoes.value
+        }
 
-    const pizza = {
-        tamanho: tamanho,
-        borda: borda,
-        bebida: bebida,
-        tipoEntrega: tipoEntrega,
-        observacoes: observacoes
+        localStorage.setItem("Pedido", JSON.stringify(pedido));
+        localStorage.setItem("Pizza", JSON.stringify(pizza));
     }
-
-    localStorage.setItem("Pessoa", JSON.stringify(pessoa));
-    localStorage.setItem("Pizza", JSON.stringify(pizza));
 }
