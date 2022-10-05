@@ -107,15 +107,29 @@ function atualizarSelectSabores() {
     for (let i = 1; i <= quantidadeSabores; i++) {
         htmlText += `<select id="sabor${i}">
             <option selected>Selecionar sabor</option>
-            <option>Mussarela</option>
-            <option>Calabresa</option>
-            <option>Quatro queijos</option>
-            <option>Cinco queijos</option>
-            <option>Bacon</option>
             <option>Alho e óleo</option>
+            <option>Bacon</option>
+            <option>Brócolis</option>
+            <option>Calabresa</option>
+            <option>Cinco queijos</option>
+            <option>Doritos</option>
+            <option>Frango com catupiry</option>
+            <option>Kartoffel</option>
+            <option>Lombo com cheddar</option>
+            <option>Marguerita</option>
+            <option>Mussarela</option>
+            <option>Palmito</option>
             <option>Peito de peru</option>
             <option>Portuguesa</option>
-            <option>Frango com catupiry</option>
+            <option>Quatro queijos</option>
+            <option>Rúcula com tomate seco</option>
+            <option>Strogonoff de carne</option>
+            <option>Strogonoff de frango</option>
+            <option>Banana nevada</option>
+            <option>Chocolate branco</option>
+            <option>Chocolate preto</option>
+            <option>Confete</option>
+            <option>Sensação</option>
         </select>`;
     };
 
@@ -128,7 +142,7 @@ function buscarSabores() {
     for (let i = 1; i <= quantidadeSabores; i++) {
         if (document.getElementById(`sabor${i}`) !== null) {
             listaSabores.push(document.getElementById(`sabor${i}`).value);
-            
+
         };
     };
 
