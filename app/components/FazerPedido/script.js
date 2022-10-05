@@ -106,6 +106,7 @@ function atualizarSelectSabores() {
 
     for (let i = 1; i <= quantidadeSabores; i++) {
         htmlText += `<select id="sabor${i}">
+            <option selected>Selecionar sabor</option>
             <option>Mussarela</option>
             <option>Calabresa</option>
             <option>Quatro queijos</option>
@@ -120,6 +121,21 @@ function atualizarSelectSabores() {
 
     divSabores.innerHTML = htmlText;
 };
+
+const listaSabores = [];
+
+function buscarSabores() {
+    for (let i = 1; i <= quantidadeSabores; i++) {
+        if (document.getElementById(`sabor${i}`) !== null) {
+            listaSabores.push(document.getElementById(`sabor${i}`).value);
+            
+        };
+    };
+
+    console.log(listaSabores);
+    return listaSabores;
+};
+
 
 function mudarValorBorda() {
     if (borda.value == "Sem borda") {
@@ -188,14 +204,11 @@ cancelar.addEventListener('click', limparInnerText);
 
 function limparInnerText() {
     valorTotal.innerText = "Valor total: R$ 0";
-}
-
-const confirmar = document.getElementById("confirmar");
-confirmar.addEventListener('click', verPedido);
+};
 
 function verPedido() {
     window.location.href = "http://127.0.0.1:5500/app/components/VerPedido/index.html";
-}
+};
 
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
@@ -217,12 +230,14 @@ function confirmarPedido(e) {
                 bebida: bebida.value,
                 tipoEntrega: tipoEntrega.value,
                 observacoes: observacoes.value,
+                sabores: buscarSabores(),
                 valorTotal: valorTotalJS
             };
 
             console.log(pedido);
 
             localStorage.setItem("Pedido", JSON.stringify(pedido));
+            verPedido();
         } else {
             alert("Escolha o tipo de entrega!");
         };
