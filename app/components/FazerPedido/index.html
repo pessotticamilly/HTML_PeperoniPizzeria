@@ -129,7 +129,7 @@
                             <p>Tamanho</p>
     
                             <div class="input">
-                                <select name="tamanho" id="tamanho">
+                                <select name="tamanho" id="tamanho" onchange="mudarValorTamanho()">
                                     <option value="Selecionar tamanho" selected>Selecionar tamanho</option>
                                     <option value="Broto">Broto</option>
                                     <option value="Pequena">Pequena</option>
@@ -148,7 +148,7 @@
                                 <p>Borda</p>
     
                                 <div class="input">
-                                    <select name="borda" id="borda">
+                                    <select name="borda" id="borda" onchange="mudarValorBorda()">
                                         <option value="Sem borda" selected>Sem borda</option>
                                         <option value="Cheddar">Cheddar</option>
                                         <option value="Catupiry">Catupiry</option>
@@ -164,7 +164,7 @@
                                 <p>Bebida</p>
     
                                 <div class="input">
-                                    <select name="bebida" id="bebida" onchange="mudarValor()">
+                                    <select name="bebida" id="bebida" onchange="mudarValorBebida()">
                                         <option value="Sem bebida" selected>Sem bebida</option>
                                         <option value="Coca-Cola 2L">Coca-Cola 2L</option>
                                         <option value="Coca-Cola 350mL">Coca-Cola 350mL</option>
@@ -185,7 +185,7 @@
                             <p>Tipo de entrega</p>
     
                             <div class="input">
-                                <select name="tipoEntrega" id="tipoEntrega">
+                                <select name="tipoEntrega" id="tipoEntrega" onchange="mudartipoEntrega()">
                                     <option value="Selecionar tipo de entrega" selected>Selecionar tipo de entrega</option>
                                     <option value="Retirada no balcão">Retirada no balcão</option>
                                     <option value="Entrega em casa">Entrega em casa</option>

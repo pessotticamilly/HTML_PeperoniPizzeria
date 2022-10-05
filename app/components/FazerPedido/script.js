@@ -1,5 +1,4 @@
 const valorTotal = document.getElementById("valorTotal");
-let valorTotalJS = 0;
 
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
@@ -14,9 +13,21 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
+let valorTotalJS = 0;
+let valorTamanho = 0;
+let valorBorda = 0;
 let valorBebida = 0;
+let valorTipoEntrega = 0;
 
-function mudarValor() {
+function mudarValorTamanho() {
+
+}
+
+function mudarValorBorda() {
+
+}
+
+function mudarValorBebida() {
     if(bebida.value == "Sem bebida"){
         valorBebida = 0;
         mudarValorTotal();
@@ -43,13 +54,15 @@ function mudarValor() {
     }
 }
 
+function mudarValorTipoEntrega() {
+
+}
+
 function mudarValorTotal() {
-    valorTotalJS += valorBebida;
+    valorTotalJS += valorTamanho + valorBorda +valorBebida + valorTipoEntrega;
     valorTotal.innerText = "Valor total: R$ " + valorTotalJS;
     valorTotalJS = 0
 }
-
-valorTotal.innerText += " " + valorTotalJS;
 
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
