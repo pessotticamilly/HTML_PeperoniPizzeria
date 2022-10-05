@@ -190,6 +190,13 @@ function limparInnerText() {
     valorTotal.innerText = "Valor total: R$ 0";
 }
 
+const confirmar = document.getElementById("confirmar");
+confirmar.addEventListener('click', verPedido);
+
+function verPedido() {
+    window.location.href = "http://127.0.0.1:5500/app/components/VerPedido/index.html";
+}
+
 const form = document.getElementById("form");
 form.addEventListener('submit', confirmarPedido);
 
