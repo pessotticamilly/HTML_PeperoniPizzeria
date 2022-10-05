@@ -70,7 +70,33 @@ function criarInputsSabores() {
             quantidadeSabores = 1;
             break;
 
-            case "Pe"
+        case "Pequena":
+            quantidadeSabores = 2;
+            break;
+
+        case "Média":
+            quantidadeSabores = 3;
+            break;
+
+        case "Grande":
+            quantidadeSabores = 3;
+            break;
+
+        case "GG":
+            quantidadeSabores = 4;
+            break;
+
+        case "Gigante":
+            quantidadeSabores = 4;
+            break;
+
+        default:
+            quantidadeSabores = 0;
+            break;
+    };
+
+    for(let i = 0; i < quantidadeSabores; i++) {
+        
     }
 };
 
