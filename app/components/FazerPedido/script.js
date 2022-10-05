@@ -11,7 +11,7 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
-tamanho.addEventListener('change', mudarValorTamanho, criarInputsSabores);
+tamanho.addEventListener('change', criarSelectSabores);
 borda.addEventListener('change', mudarValorBorda);
 bebida.addEventListener('change', mudarValorBebida);
 tipoEntrega.addEventListener('change', mudarValorTipoEntrega);
@@ -62,9 +62,9 @@ function mudarValorTamanho() {
     };
 };
 
-const quantidadeSabores = 0;
+let quantidadeSabores = 0;
 
-function criarInputsSabores() {
+function criarSelectSabores() {
     switch (tamanho.value) {
         case "Broto":
             quantidadeSabores = 1;
@@ -95,7 +95,30 @@ function criarInputsSabores() {
             break;
     };
 
-    
+    mudarValorTamanho();
+    atualizarSelectSabores();
+};
+
+const divSabores = document.getElementById("sabores");
+
+function atualizarSelectSabores() {
+    let htmlText = "";
+
+    for (let i = 1; i <= quantidadeSabores; i++) {
+        htmlText += `<select id="sabor${i}">
+            <option>Mussarela</option>
+            <option>Calabresa</option>
+            <option>Quatro queijos</option>
+            <option>Cinco queijos</option>
+            <option>Bacon</option>
+            <option>Alho e óleo</option>
+            <option>Peito de peru</option>
+            <option>Portuguesa</option>
+            <option>Frango com catupiry</option>
+        </select>`;
+    };
+
+    divSabores.innerHTML = htmlText;
 };
 
 function mudarValorBorda() {
