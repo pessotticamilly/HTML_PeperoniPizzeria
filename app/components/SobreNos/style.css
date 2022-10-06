@@ -95,28 +95,10 @@ header {
 
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     min-height: 92vh;
     height: 92vh;
     max-height: 92vh;
-}
-
-#titulo {
-    padding: 2rem 1rem 1rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-#titulo p {
-    font-size: 2rem;
-    font-weight: 700;
 }
 
 #containers {
@@ -127,40 +109,48 @@ main {
     height: 100%;
 }
 
-.juntos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
 .container {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+#logoCompleta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+}
+
+#logoCompleta img {
     width: 100%;
     height: auto;
 }
 
-.texto {
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#texto p {
+    padding: 0 1rem 1rem 1rem;
+}
+
+#tituloTexto {
     width: 100%;
 }
 
-.texto span {
-    display: flex;
+#textoUm {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
-.texto p {
-    padding: 0 0 0 0.5rem;
-    font-weight: 500;
+#textoDois {
+    padding: 0 1rem 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #999;
 }
 
 
