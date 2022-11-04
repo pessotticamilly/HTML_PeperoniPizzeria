@@ -3,9 +3,6 @@ const app = express();
 const port = 3000;
 
 app.use(express.static('./components'));
-// app.use(express.static(__dirname + '/components/FazerPedido/style.css'));
-// app.use(express.static(__dirname + '/components/VerPedido/style.css'));
-// app.use(express.static(__dirname + '/components/SobreNos/style.css'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
