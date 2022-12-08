@@ -1,9 +1,15 @@
 const nome = document.getElementById("nome");
-const email = document.getElementById("email");
-const telefone = document.getElementById("telefone");
-const bairro = document.getElementById("bairro");;
-const rua = document.getElementById("rua");
+const sobrenome = document.getElementById("sobrenome");
+const cpf = document.getElementById("cpf");
+const nascimento = document.getElementById("nascimento");
+
+const cep = document.getElementById("cep");
 const numero = document.getElementById("numero");
+const complemento = document.getElementById("complemento");
+const rua = document.getElementById("rua");
+const bairro = document.getElementById("bairro");
+const cidade = document.getElementById("cidade");
+const estado = document.getElementById("estado");
 
 const tamanho = document.getElementById("tamanho");
 const borda = document.getElementById("borda");
@@ -11,18 +17,14 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
-tamanho.addEventListener('change', criarSelectSabores);
-borda.addEventListener('change', mudarValorBorda);
-bebida.addEventListener('change', mudarValorBebida);
-tipoEntrega.addEventListener('change', mudarValorTipoEntrega);
+const pValorTotal = document.getElementById("pValorTotal");
+const divSabores = document.getElementById("sabores");
 
-const valorTotal = document.getElementById("valorTotal");
+const cancelar = document.getElementById("cancelar");
+const form = document.getElementById("form");
 
-let valorTotalJS = 0.00;
 let valorTamanho = 0.00;
-let valorBorda = 0.00;
-let valorBebida = 0.00;
-let valorTipoEntrega = 0.00;
+let quantidadeSabores = 0;
 
 function mudarValorTamanho() {
     if (tamanho.value == "Selecionar tamanho") {
@@ -62,8 +64,6 @@ function mudarValorTamanho() {
     };
 };
 
-let quantidadeSabores = 0;
-
 function criarSelectSabores() {
     switch (tamanho.value) {
         case "Broto":
@@ -99,8 +99,6 @@ function criarSelectSabores() {
     atualizarSelectSabores();
 };
 
-const divSabores = document.getElementById("sabores");
-
 function atualizarSelectSabores() {
     let htmlText = "";
 
@@ -130,7 +128,7 @@ function atualizarSelectSabores() {
             <option>Chocolate preto</option>
             <option>Confete</option>
             <option>Sensação</option>
-        </select>`;
+            </select>`;
     };
 
     divSabores.innerHTML = htmlText;
@@ -142,7 +140,6 @@ function buscarSabores() {
     for (let i = 1; i <= quantidadeSabores; i++) {
         if (document.getElementById(`sabor${i}`) !== null) {
             listaSabores.push(document.getElementById(`sabor${i}`).value);
-
         };
     };
 
@@ -150,6 +147,7 @@ function buscarSabores() {
     return listaSabores;
 };
 
+let valorBorda = 0.00;
 
 function mudarValorBorda() {
     if (borda.value == "Sem borda") {
@@ -167,6 +165,8 @@ function mudarValorBorda() {
         mudarValorTotal();
     };
 };
+
+let valorBebida = 0.00;
 
 function mudarValorBebida() {
     if (bebida.value == "Sem bebida") {
@@ -195,6 +195,8 @@ function mudarValorBebida() {
     };
 };
 
+let valorTipoEntrega = 0.00;
+
 function mudarValorTipoEntrega() {
     if (tipoEntrega.value == "Selecionar tipo de entrega" || tipoEntrega.value == "Retirada no balcão") {
         valorTipoEntrega = 0.00;
@@ -207,53 +209,59 @@ function mudarValorTipoEntrega() {
     };
 };
 
-let valorTotalLocalStorage = 0;
+let valorTotal = 0.00;
+let pValorTotalLocalStorage = 0;
 
 function mudarValorTotal() {
-    valorTotalJS += valorTamanho + valorBorda + valorBebida + valorTipoEntrega;
-    valorTotal.innerText = "Valor total: R$ " + valorTotalJS;
-    valorTotalLocalStorage = valorTotalJS;
-    valorTotalJS = 0.00;
+    valorTotal += valorTamanho + valorBorda + valorBebida + valorTipoEntrega;
+    pValorTotal.innerText = "Valor total: R$ " + valorTotal;
+    pValorTotalLocalStorage = valorTotal;
+    valorTotal = 0.00;
 };
 
-const cancelar = document.getElementById("cancelar");
-cancelar.addEventListener('click', limparInnerText);
-
-function limparInnerText() {
-    valorTotal.innerText = "Valor total: R$ 0";
+function limparValorTotal() {
+    pValorTotal.innerText = "Valor total: R$ 0";
 };
 
 function verPedido() {
     window.location.href = "http://127.0.0.1:5500/app/components/VerPedido/index.html";
 };
 
-const form = document.getElementById("form");
-form.addEventListener('submit', confirmarPedido);
-
 function confirmarPedido(e) {
     e.preventDefault();
-
+    
     if (tamanho.value != "Selecionar tamanho") {
         if (tipoEntrega.value != "Selecionar tipo de entrega") {
-            const pedido = {
+           const endereco = {
+            id: "",
+            cep: cep.value,
+            numero: numero.value,
+            complemento: complemento.value,
+            rua: rua.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            estado: estado.value
+           }
+
+            const pessoa = {
                 nome: nome.value,
-                email: email.value,
-                telefone: telefone.value,
-                bairro: bairro.value,
-                rua: rua.value,
-                numero: numero.value,
+                sobrenome: sobrenome.value,
+                cpf: cpf.value,
+                nascimento: nascimento.value,
+                id_endereco: endereco.id
+
+            };
+                
+            const pizza = {
                 tamanho: tamanho.value,
                 borda: borda.value,
                 bebida: bebida.value,
                 tipoEntrega: tipoEntrega.value,
                 observacoes: observacoes.value,
                 sabores: buscarSabores(),
-                valorTotal: valorTotalLocalStorage
+                pValorTotal: pValorTotalLocalStorage
             };
 
-            console.log(pedido);
-
-            localStorage.setItem("Pedido", JSON.stringify(pedido));
             verPedido();
         } else {
             alert("Escolha o tipo de entrega!");
@@ -262,3 +270,11 @@ function confirmarPedido(e) {
         alert("Escolha o tamanho da pizza!");
     };
 };
+
+tamanho.addEventListener('change', criarSelectSabores);
+borda.addEventListener('change', mudarValorBorda);
+bebida.addEventListener('change', mudarValorBebida);
+tipoEntrega.addEventListener('change', mudarValorTipoEntrega);
+
+cancelar.addEventListener('click', limparValorTotal);
+form.addEventListener('submit', confirmarPedido);

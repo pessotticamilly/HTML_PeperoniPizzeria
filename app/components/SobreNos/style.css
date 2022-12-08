@@ -1,94 +1,57 @@
 * {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     margin: 0;
     padding: 0;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
 }
 
 header {
-    padding: 0 2rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    background-color: #c9031a;
+    display: flex;
     height: 8vh;
-    background-color: #C9031A;
-}
-
-#containerLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
 }
 
 #logo {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    height: 6vh;
+    justify-content: center;
+    overflow: hidden;
+    width: auto;
 }
 
 #logo img {
-    width: auto;
-    height: 7vh;
+    height: 100%;
+    width: 100%;
 }
 
-.containerEsquerdo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 25%;
-}
-
-.navEsquerdo a {
-    margin: 0 6rem 0 0;
-    color: #ffffff;
-    text-decoration: none;
+#navbar a {
+    color: #fff;
+    margin-left: 2rem;
     padding: 0.5rem;
+    text-decoration: none;
 }
 
-.navEsquerdo a:hover {
-    cursor: pointer;
-    background-color: #9D1722;
+#navbar a:hover {
+    background-color: #9d1722;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
-#loc {
-    margin: 0;
+#pagina {
+    border-bottom: 2px #fff solid;
     padding: 0.5rem 0.5rem 0.1rem 0.5rem;
-    border-bottom: 3px #ffffff solid;
 }
 
-#loc:hover {
+#pagina:hover {
     background-color: transparent;
     border-radius: 0;
-}
-
-.containerDireito {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 25%;
-}
-
-.navDireito a {
-    margin: 0 6rem 0 0;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.5rem;
-}
-
-.navDireito a:hover {
-    cursor: pointer;
-    background-color: #9D1722;
-    border-radius: 0.5rem;
-}
-
-#final {
-    margin: 0;
 }
 
 
