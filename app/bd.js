@@ -1,28 +1,23 @@
-import mysql from "mysql2";
+const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "peperoni_pizzeira",
+  database: "peperoni_pizzeria",
 });
 
 const sql = connection.promise();
 
-
-export const buscarEndereco = async () => {
-    const rows = await sql.query("SELECT * FROM endereco");
-    console.log(rows);
+const cadastrarPessoa = async (pessoa) => {
+  await sql.execute("INSERT INTO pessoa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [null, pessoa.nome, pessoa.sobrenome, pessoa.cpf, pessoa.nascimento, pessoa.cep, pessoa.numero, pessoa.complemento, pessoa.rua, pessoa.bairro, pessoa.cidade, pessoa.estado]);
 };
 
-export const cadastrarPessoa = async (pessoa) => {
-  await sql.execute("INSERT INTO pessoa VALUES (?, ?, ?, ?, ?)", [null, pessoa.nome, pessoa.sobrenome, pessoa.cpf, pessoa.nascimento]);
+const cadastrarPizza = async (pizza) => {
+  await sql.execute("INSERT INTO pizza VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [null, pizza.tamanho, pizza.sabor01, pizza.sabor02, pizza.sabor03, pizza.sabor04, pizza.borda, pizza.bebida, pizza.tipoEntrega, pizza.observacoes]);
 };
 
-export const cadastrarEndereco = async (endereco) => {
-  await sql.execute("INSERT INTO endereco VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [null, endereco.cep, endereco.numero, endereco.complemento, endereco.rua, endereco.bairro, endereco.cidade, endereco.estado]);
-};
-
-export const cadastrarPizza = async (pizza) => {
-  await sql.execute("INSERT INTO pizza VALUES (?, ?, ?, ?, ?, ?)", [null, pizza.tamanho, pizza.borda, pizza.bebida, pizza.tipoEntrega, pizza.observacoes]);
+module.exports = {
+  cadastrarPessoa,
+  cadastrarPizza
 };

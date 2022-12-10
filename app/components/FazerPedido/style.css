@@ -115,6 +115,15 @@ input::placeholder {
     color: #555;
 }
 
+#sabores {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+
 #linhaFixa {
     align-items: center;
     display: flex;

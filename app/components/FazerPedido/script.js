@@ -17,52 +17,21 @@ const bebida = document.getElementById("bebida");
 const tipoEntrega = document.getElementById("tipoEntrega");
 const observacoes = document.getElementById("observacoes");
 
-const pValorTotal = document.getElementById("pValorTotal");
+const pValorTotal = document.getElementById("valorTotal");
 const divSabores = document.getElementById("sabores");
 
 const cancelar = document.getElementById("cancelar");
 const form = document.getElementById("form");
 
+let listaSabores = [];
+
 let valorTamanho = 0.00;
 let quantidadeSabores = 0;
-
-function mudarValorTamanho() {
-    if (tamanho.value == "Selecionar tamanho") {
-        valorTamanho = 0.00;
-        mudarValorTotal();
-    };
-
-    if (tamanho.value == "Broto") {
-        valorTamanho = 15.00;
-        mudarValorTotal();
-    };
-
-    if (tamanho.value == "Pequena") {
-        valorTamanho = 30.00;
-        mudarValorTotal();
-    };
-
-    if (tamanho.value == "Média") {
-        valorTamanho = 35.00;
-        mudarValorTotal();
-    };
-
-    if (tamanho.value == "Grande") {
-        valorTamanho = 40.00;
-        mudarValorTotal();
-    };
-
-    if (tamanho.value == "GG") {
-        valorTamanho = 45.00;
-        mudarValorTotal();
-    };
-
-
-    if (tamanho.value == "Gigante") {
-        valorTamanho = 50.00;
-        mudarValorTotal();
-    };
-};
+let valorBorda = 0.00;
+let valorBebida = 0.00;
+let valorTipoEntrega = 0.00;
+let valorTotal = 0.00;
+let pValorTotalLocalStorage = 0.00;
 
 function criarSelectSabores() {
     switch (tamanho.value) {
@@ -104,28 +73,28 @@ function atualizarSelectSabores() {
 
     for (let i = 1; i <= quantidadeSabores; i++) {
         htmlText += `<select id="sabor${i}">
-            <option selected>Selecionar sabor</option>
-            <option>Alho e óleo</option>
-            <option>Bacon</option>
-            <option>Brócolis</option>
-            <option>Calabresa</option>
-            <option>Cinco queijos</option>
-            <option>Doritos</option>
-            <option>Frango com catupiry</option>
-            <option>Kartoffel</option>
-            <option>Lombo com cheddar</option>
-            <option>Marguerita</option>
-            <option>Mussarela</option>
-            <option>Palmito</option>
-            <option>Peito de peru</option>
-            <option>Portuguesa</option>
-            <option>Quatro queijos</option>
-            <option>Rúcula com tomate seco</option>
-            <option>Strogonoff de carne</option>
-            <option>Strogonoff de frango</option>
-            <option>Banana nevada</option>
-            <option>Chocolate branco</option>
-            <option>Chocolate preto</option>
+        <option selected>Selecionar sabor</option>
+        <option>Alho e óleo</option>
+        <option>Bacon</option>
+        <option>Brócolis</option>
+        <option>Calabresa</option>
+        <option>Cinco queijos</option>
+        <option>Doritos</option>
+        <option>Frango com catupiry</option>
+        <option>Kartoffel</option>
+        <option>Lombo com cheddar</option>
+        <option>Marguerita</option>
+        <option>Mussarela</option>
+        <option>Palmito</option>
+        <option>Peito de peru</option>
+        <option>Portuguesa</option>
+        <option>Quatro queijos</option>
+        <option>Rúcula com tomate seco</option>
+        <option>Strogonoff de carne</option>
+        <option>Strogonoff de frango</option>
+        <option>Banana nevada</option>
+        <option>Chocolate branco</option>
+        <option>Chocolate preto</option>
             <option>Confete</option>
             <option>Sensação</option>
             </select>`;
@@ -133,8 +102,6 @@ function atualizarSelectSabores() {
 
     divSabores.innerHTML = htmlText;
 };
-
-const listaSabores = [];
 
 function buscarSabores() {
     for (let i = 1; i <= quantidadeSabores; i++) {
@@ -147,7 +114,43 @@ function buscarSabores() {
     return listaSabores;
 };
 
-let valorBorda = 0.00;
+function mudarValorTamanho() {
+    if (tamanho.value == "Selecionar tamanho") {
+        valorTamanho = 0.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Broto") {
+        valorTamanho = 15.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Pequena") {
+        valorTamanho = 30.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Média") {
+        valorTamanho = 35.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "Grande") {
+        valorTamanho = 40.00;
+        mudarValorTotal();
+    };
+
+    if (tamanho.value == "GG") {
+        valorTamanho = 45.00;
+        mudarValorTotal();
+    };
+
+
+    if (tamanho.value == "Gigante") {
+        valorTamanho = 50.00;
+        mudarValorTotal();
+    };
+};
 
 function mudarValorBorda() {
     if (borda.value == "Sem borda") {
@@ -165,8 +168,6 @@ function mudarValorBorda() {
         mudarValorTotal();
     };
 };
-
-let valorBebida = 0.00;
 
 function mudarValorBebida() {
     if (bebida.value == "Sem bebida") {
@@ -195,8 +196,6 @@ function mudarValorBebida() {
     };
 };
 
-let valorTipoEntrega = 0.00;
-
 function mudarValorTipoEntrega() {
     if (tipoEntrega.value == "Selecionar tipo de entrega" || tipoEntrega.value == "Retirada no balcão") {
         valorTipoEntrega = 0.00;
@@ -208,9 +207,6 @@ function mudarValorTipoEntrega() {
         mudarValorTotal();
     };
 };
-
-let valorTotal = 0.00;
-let pValorTotalLocalStorage = 0;
 
 function mudarValorTotal() {
     valorTotal += valorTamanho + valorBorda + valorBebida + valorTipoEntrega;
@@ -227,42 +223,51 @@ function verPedido() {
     window.location.href = "http://127.0.0.1:5500/app/components/VerPedido/index.html";
 };
 
+const pegarUltimoId = async () => {
+    fetch('http://localhost:3000/buscarEndereco')
+};
+
 function confirmarPedido(e) {
     e.preventDefault();
-    
+
+    const pessoa = {
+        nome: nome.value,
+        sobrenome: sobrenome.value,
+        cpf: cpf.value,
+        nascimento: nascimento.value,
+        cep: cep.value,
+        numero: numero.value,
+        complemento: complemento.value,
+        rua: rua.value,
+        bairro: bairro.value,
+        cidade: cidade.value,
+        estado: estado.value
+    };
+
+    const pizza = {
+        tamanho: tamanho.value,
+        sabor01: buscarSabores()[0],
+        sabor02: buscarSabores()[1],
+        sabor03: buscarSabores()[2],
+        sabor04: buscarSabores()[3],
+        borda: borda.value,
+        bebida: bebida.value,
+        tipoEntrega: tipoEntrega.value,
+        observacoes: observacoes.value,
+        pValorTotal: pValorTotalLocalStorage
+    };
+
     if (tamanho.value != "Selecionar tamanho") {
         if (tipoEntrega.value != "Selecionar tipo de entrega") {
-           const endereco = {
-            id: "",
-            cep: cep.value,
-            numero: numero.value,
-            complemento: complemento.value,
-            rua: rua.value,
-            bairro: bairro.value,
-            cidade: cidade.value,
-            estado: estado.value
-           }
+            fetch('http://localhost:3000/cadastrarPedido', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ pessoa, pizza })
+            });
 
-            const pessoa = {
-                nome: nome.value,
-                sobrenome: sobrenome.value,
-                cpf: cpf.value,
-                nascimento: nascimento.value,
-                id_endereco: endereco.id
-
-            };
-                
-            const pizza = {
-                tamanho: tamanho.value,
-                borda: borda.value,
-                bebida: bebida.value,
-                tipoEntrega: tipoEntrega.value,
-                observacoes: observacoes.value,
-                sabores: buscarSabores(),
-                pValorTotal: pValorTotalLocalStorage
-            };
-
-            verPedido();
+            // verPedido();
         } else {
             alert("Escolha o tipo de entrega!");
         };
@@ -276,5 +281,22 @@ borda.addEventListener('change', mudarValorBorda);
 bebida.addEventListener('change', mudarValorBebida);
 tipoEntrega.addEventListener('change', mudarValorTipoEntrega);
 
+cep.addEventListener("blur", async (e) => {
+    e.preventDefault();
+
+    const data = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`, {
+        method: "GET",
+        mode: "cors",
+        cache: "default"
+    }).then(res => res.json());
+
+    rua.value = data.logradouro;
+    bairro.value = data.bairro;
+    cidade.value = data.localidade;
+    estado.value = data.uf;
+});
+
 cancelar.addEventListener('click', limparValorTotal);
 form.addEventListener('submit', confirmarPedido);
+
+listaSabores.length = 0;
