@@ -24,6 +24,8 @@ app.get('/sobreNos', (req, res) => {
     res.sendFile(__dirname + './components/SobreNos/index.html');
 });
 
+app.get('/buscarPedido', )
+
 app.post("/cadastrarPedido", (req, res) => {
     const { pessoa, pizza } = req.body;
 
